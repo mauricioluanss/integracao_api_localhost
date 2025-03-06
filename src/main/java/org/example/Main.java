@@ -1,12 +1,13 @@
 package org.example;
-import org.example.controller.Requestis;
+import org.example.controller.Request;
 
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
-        Requestis req = new Requestis();
+        Request req = new Request();
 
         req.chamaPagamento(1, "CARD", "DEBIT", "FULL_PAYMENT");
+        req.consultaPagamento();
     }
 }
