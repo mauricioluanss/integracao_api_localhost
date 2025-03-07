@@ -1,6 +1,5 @@
 package org.example.controller;
 import org.example.repository.Body;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -36,14 +35,13 @@ public class Request {
                 .GET()
                 .build();
 
-
         boolean status = true;
         do {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8));
 
             if (response.statusCode() != 200) {
-                System.out.print(" Aguardando ");
-                Thread.sleep(4000);
+                System.out.print("Aguardando...\n");
+                Thread.sleep(5000);
             } else if (response.statusCode() == 202){
                 System.out.println(response.statusCode() + response.body());
                 Thread.sleep(3000);
